@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: #333;
+}
+
+
+/* ================= HEADER ================= */
+
+header {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 28px;
+}
+
+
+/* ================= NAVIGATION ================= */
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+nav a:hover {
+    color: #00bfff;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 70px 30px;
+    min-height: 450px;
+}
+
+.hero-image img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.hero-text {
+    max-width: 500px;
+}
+
+.hero-text h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.hero-text h3 {
+    color: #007bff;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.hero-text button {
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* ================= SKILLS & PROJECTS ================= */
+
+.section {
+    padding: 50px 30px;
+    text-align: center;
+}
+
+.section > h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: white;
+    width: 280px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    color: #007bff;
+    margin-bottom: 12px;
+}
+
+.card p {
+    line-height: 1.5;
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #eeeeee;
+}
+
+.contact h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    margin: 8px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+
+/* ================================================= */
+/* TABLET */
+/* ================================================= */
+
+@media (min-width: 601px) and (max-width: 992px) {
+
+    body {
+        background-color: lightblue;
+    }
+
+    .hero {
+        gap: 30px;
+    }
+
+    .hero-image img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .hero-text h2 {
+        font-size: 32px;
+    }
+
+}
+
+
+/* ================================================= */
+/* MOBILE */
+/* ================================================= */
+
+@media (max-width: 600px) {
+
+    /* Mobile Background */
+    body {
+        background-color: lightgreen;
+    }
+
+
+    /* Navigation becomes column */
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+
+    /* Hero Image ↓ Text */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+        gap: 25px;
+    }
+
+    .hero-image img {
+        width: 220px;
+        height: 220px;
+    }
+
+    .hero-text h2 {
+        font-size: 28px;
+    }
+
+    .hero-text h3 {
+        font-size: 20px;
+    }
+
+    .hero-text p {
+        font-size: 15px;
+    }
+
+
+    /* Section Font Size */
+    .section > h2 {
+        font-size: 26px;
+    }
+
+
+    /* Cards */
+    .card {
+        width: 100%;
+    }
+
+}

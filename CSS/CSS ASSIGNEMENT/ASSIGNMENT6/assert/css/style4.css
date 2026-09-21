@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 30px;
+}
+
+.box {
+    width: 200px;
+    height: 80px;
+    margin: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+    font-weight: bold;
+}
+
+.box1 {
+    background-color: blue;
+}
+
+.box2 {
+    background-color: red;
+    position: relative;
+    top: 40px;
+    left: 60px;
+}
+
+.box3 {
+    background-color: green;
+}

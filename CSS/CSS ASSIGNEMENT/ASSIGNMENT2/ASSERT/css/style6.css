@@ -1,0 +1,44 @@
+/* Group Selector */
+h2, p, span {
+    font-family: Arial, sans-serif;
+}
+
+/* Class Selectors */
+.title {
+    color: blue;
+}
+
+.place {
+    color: green;
+}
+
+/* ID Selectors */
+#zoho {
+    background-color: #f8d7da;
+    padding: 10px;
+    margin: 10px;
+}
+
+#freshworks {
+    background-color: #d4edda;
+    padding: 10px;
+    margin: 10px;
+}
+
+#aspire {
+    background-color: #d1ecf1;
+    padding: 10px;
+    margin: 10px;
+}
+
+#cts {
+    background-color: #fff3cd;
+    padding: 10px;
+    margin: 10px;
+}
+
+#tcs {
+    background-color: #e2e3e5;
+    padding: 10px;
+    margin: 10px;
+}

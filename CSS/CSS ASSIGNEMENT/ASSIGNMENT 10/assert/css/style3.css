@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Team Container */
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Employee Card */
+.employee-card {
+    width: 30%;
+    min-width: 280px;
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.employee-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.employee-card h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.employee-card p {
+    color: #666;
+    margin: 6px 0;
+}
+
+
+/* Tablet - 2 Cards Per Row */
+@media (max-width: 900px) {
+
+    .employee-card {
+        width: 45%;
+    }
+
+}
+
+
+/* Mobile - 1 Card Per Row */
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px;
+    }
+
+    .employee-card {
+        width: 100%;
+    }
+
+}

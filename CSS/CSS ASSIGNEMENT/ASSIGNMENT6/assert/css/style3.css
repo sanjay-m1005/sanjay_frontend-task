@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 50px;
+}
+
+.parent {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    font-size: 50px;
+}
+
+.badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    color: white;
+    font-size: 14px;
+    padding: 5px 8px;
+    border-radius: 50%;
+}

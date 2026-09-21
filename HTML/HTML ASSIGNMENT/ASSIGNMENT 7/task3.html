@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospital Patient Registration</title>
+</head>
+<body>
+
+<h1>Hospital Patient Registration</h1>
+
+<form>
+
+    <label>Patient ID:</label>
+    <input type="text" name="patientId">
+    <br><br>
+
+    <label>Patient Name:</label>
+    <input type="text" name="patientName">
+    <br><br>
+
+    <label>Age:</label>
+    <input type="number" name="age">
+    <br><br>
+
+    <label>Gender:</label>
+    <input type="radio" name="gender" value="male"> Male
+    <input type="radio" name="gender" value="female"> Female
+    <br><br>
+
+    <label>Blood Group:</label>
+    <select name="bloodGroup">
+        <option>Select Blood Group</option>
+        <option>A+</option>
+        <option>A-</option>
+        <option>B+</option>
+        <option>B-</option>
+        <option>O+</option>
+        <option>O-</option>
+        <option>AB+</option>
+        <option>AB-</option>
+    </select>
+    <br><br>
+
+    <label>Doctor:</label>
+    <select name="doctor">
+        <option>Select Doctor</option>
+        <option>Dr. Kumar</option>
+        <option>Dr. Priya</option>
+        <option>Dr. Raj</option>
+    </select>
+    <br><br>
+
+    <label>Appointment Date:</label>
+    <input type="date" name="appointmentDate">
+    <br><br>
+
+    <label>Symptoms:</label>
+    <br>
+    <textarea name="symptoms" rows="5" cols="30"></textarea>
+    <br><br>
+
+    <label>Medical Report Upload:</label>
+    <input type="file" name="medicalReport">
+    <br><br>
+
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+
+</form>
+
+<hr>
+
+<h2>Patient Report</h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Patient ID</th>
+            <th>Patient Name</th>
+            <th>Doctor</th>
+            <th>Blood Group</th>
+            <th>Appointment Date</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>PAT001</td>
+            <td>Ravi</td>
+            <td>Dr. Kumar</td>
+            <td>O+</td>
+            <td>2026-07-25</td>
+            <td>Confirmed</td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

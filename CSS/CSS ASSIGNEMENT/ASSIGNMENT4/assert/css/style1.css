@@ -1,0 +1,27 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+a{
+    text-decoration: none;
+}
+.parent{
+    background-color: black;
+    color: white;
+    height: 300px;
+    padding: 20px;
+}
+.child{
+    background-color: red;
+    padding: 20px;
+    height: 200px;
+    width: 400px;
+    display: block;
+}

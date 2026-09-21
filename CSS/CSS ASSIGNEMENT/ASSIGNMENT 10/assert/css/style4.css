@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+/* Services Section */
+
+.services {
+    padding: 40px;
+}
+
+.services h1 {
+    text-align: center;
+    font-size: 35px;
+    color: #222;
+    margin-bottom: 30px;
+}
+
+/* Cards */
+
+.service-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.service-card {
+    flex: 1;
+    background-color: #f2f2f2;
+    padding: 25px 15px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.service-card h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.5;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    body {
+        background-color: lightblue;
+    }
+
+    .services {
+        padding: 20px;
+    }
+
+    /* Heading color and font size change */
+    .services h1 {
+        color: darkblue;
+        font-size: 25px;
+    }
+
+    /* Cards one below another */
+    .service-container {
+        flex-direction: column;
+    }
+
+    /* Reduce font size */
+    .service-card h2 {
+        font-size: 18px;
+    }
+
+    .service-card p {
+        font-size: 13px;
+    }
+
+}

@@ -1,0 +1,12 @@
+let apple="react"
+let ball=1234
+let cat=12.34
+let dog=null
+let fish=true
+let god=undefined
+console.log(typeof apple);
+console.log(typeof ball);
+console.log(typeof cat);
+console.log(typeof dog);
+console.log(typeof fish);
+console.log(typeof god);

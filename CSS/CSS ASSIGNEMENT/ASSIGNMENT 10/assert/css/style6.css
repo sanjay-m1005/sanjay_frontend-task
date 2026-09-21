@@ -1,0 +1,403 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: #333;
+}
+
+
+/* ================= HEADER ================= */
+
+header {
+    background-color: #222;
+    color: white;
+    padding: 20px 50px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 30px;
+}
+
+
+/* ================= NAVIGATION ================= */
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+nav a:hover {
+    color: #ffcc00;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 400px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background-color: #e8f4ff;
+}
+
+.hero-content h2 {
+    font-size: 45px;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+
+    border: none;
+    border-radius: 5px;
+
+    padding: 12px 25px;
+
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+/* ================= CATEGORIES ================= */
+
+.categories {
+    padding: 50px 30px;
+    text-align: center;
+}
+
+.categories h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.category-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.category {
+    width: 220px;
+    padding: 30px 20px;
+
+    background-color: #f2f2f2;
+
+    border-radius: 10px;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.category h3 {
+    font-size: 20px;
+}
+
+
+/* ================= PRODUCTS ================= */
+
+.products {
+    padding: 50px 30px;
+    text-align: center;
+}
+
+.products > h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+
+/* Product Flexbox */
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+/* Product Card */
+
+.product-card {
+    width: 23%;
+
+    background-color: white;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    padding: 15px;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+}
+
+.product-card h3 {
+    font-size: 20px;
+    margin: 15px 0 10px;
+}
+
+.price {
+    color: #e63946;
+    font-size: 18px;
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+.product-card button {
+    width: 100%;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background-color: #222;
+    color: white;
+
+    padding: 40px 30px;
+
+    display: flex;
+    justify-content: space-around;
+
+    gap: 30px;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-section h3 {
+    color: #ffcc00;
+    margin-bottom: 5px;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* ================================================= */
+/* MAX WIDTH 992px - TABLET */
+/* ================================================= */
+
+@media (max-width: 992px) {
+
+    body {
+        background-color: #dff3ff;
+    }
+
+    header {
+        padding: 20px 30px;
+    }
+
+    .logo h1 {
+        font-size: 26px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 15px;
+    }
+
+    .hero-content h2 {
+        font-size: 38px;
+    }
+
+    .products > h2 {
+        font-size: 28px;
+    }
+
+    /* 2 Cards Per Row */
+
+    .product-card {
+        width: 45%;
+    }
+
+}
+
+
+/* ================================================= */
+/* MAX WIDTH 768px */
+/* ================================================= */
+
+@media (max-width: 768px) {
+
+    body {
+        background-color: #fff3cd;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .hero {
+        min-height: 350px;
+        padding: 40px 20px;
+    }
+
+    .hero-content h2 {
+        font-size: 32px;
+    }
+
+    .hero-content p {
+        font-size: 17px;
+    }
+
+    .categories h2,
+    .products > h2 {
+        font-size: 26px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+}
+
+
+/* ================================================= */
+/* MAX WIDTH 576px - MOBILE */
+/* ================================================= */
+
+@media (max-width: 576px) {
+
+    body {
+        background-color: #e2f7e2;
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    .logo h1 {
+        font-size: 22px;
+    }
+
+    /* Navigation */
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        min-height: 300px;
+        padding: 30px 15px;
+    }
+
+    .hero-content h2 {
+        font-size: 27px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+    }
+
+
+    /* Categories */
+
+    .categories {
+        padding: 35px 15px;
+    }
+
+    .category {
+        width: 100%;
+    }
+
+
+    /* Products */
+
+    .products {
+        padding: 35px 15px;
+    }
+
+    .products > h2 {
+        font-size: 24px;
+    }
+
+    /* 1 Card Per Row */
+
+    .product-card {
+        width: 100%;
+    }
+
+    .product-card h3 {
+        font-size: 18px;
+    }
+
+    .price {
+        font-size: 16px;
+    }
+
+
+    /* Footer */
+
+    footer {
+        padding: 30px 15px;
+        font-size: 14px;
+    }
+
+}

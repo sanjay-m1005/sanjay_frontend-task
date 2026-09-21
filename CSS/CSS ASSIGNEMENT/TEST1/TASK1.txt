@@ -1,0 +1,106 @@
+1.What is CSS? Explain the full form of CSS.
+ans)css is a cascadind style sheets
+
+2.What is Cascading in CSS? Give a real-time example.
+ans)cascading is a stylesheet language used to creat a desian to the html web pages.
+
+3.What is the difference between Cascading and Specificity?
+ans)cascading:when multiple css rules have the smae priority,the last declared rule is applied."
+    specificity:specifity decides which selector has higher priority.the order is generally inline>ID>CLASS>ELEMENT.
+
+4.What are the three types of CSS? Which one is recommended in real-time projects and why?
+ans)the three type of css are
+    *inline selector
+    *internal selctor
+    *external selector
+     external css is recommended to the real time project
+
+5.Explain the following CSS selectors with examples:
+
+Universal Selector
+Element Selector
+Class Selector
+ID Selector
+Group Selector
+Descendant Selector
+Child Selector
+
+ans)universal selector example are   :we use the (ex: * )element to activate the universal selector.
+    Element selector example are   :we use the perticular tag element to activate the element selector.
+    class selector example are   :we use the (ex:.) to call the tag element to activate the class selector.
+    ID selector example are      :we use the (ex:#)to all the tag element to activate the id selector.
+    GROUP selector exaple are    : we use all the tag (ex:div h1 p) tag element to activate the group selector.
+    DESCENDANT selector example are: we use all the tag (ex:div,h1,p) tag element to active the descendant selector.
+    CHILD selector example are   : we use all the tag (ex:div>h1>p) tag element to activate the child selector
+
+6.What is the difference between Class Selector and ID Selector?
+ans)The diffrent between the class and ID are class we use the dot and ID we use the # but ID have the high preferences
+
+7.What is the difference between Descendant Selector and Child Selector?
+ans)In the descendant we use (ex:div,h1,p) and child we use (ex:div>h1>p) 
+
+8.Explain the CSS Box Model. Name its four parts.
+ans)css box model are
+    *content
+    *padding
+    *bodder
+    *margin
+
+9.What is the difference between Padding and Margin?
+ans)padding is help to creat the space inside the box
+    margin creat the space outside of the box
+
+10.What is box-sizing:border-box? Why is it recommended?
+ans)box-sizing: border-box includes padding and border inside the element's width and height, making layouts easier to manage and more predictable.
+
+11.Explain the difference between the following display properties:
+block
+inline
+inline-block
+
+ans)block is take a full line of the box
+    inline is take only a certin space
+    inline-block take a small space but in block level element
+
+12.Can we apply width and height to:
+
+div
+span
+button
+Explain why.
+
+ans)yes we can use the width and height in the div,span,button by the css 
+
+13.
+What is the difference between:
+display:none;
+and
+visibility:hidden;
+ans)display :none is use to delete the full line with the space 
+    visibility:hidden is delete only the conttent but not the space 
+
+14.Explain Flexbox.What are:Flex Container,Flex Item,Main Axis,Cross Axis?
+ans)Flexbox: A CSS layout used to arrange and align items easily.
+Flex Container: The parent element that controls the layout.
+Flex Item: The child elements inside the flex container.
+Main Axis: The main direction in which items are arranged (default: left to right).
+Cross Axis: The direction perpendicular to the main axis (default: top to bottom).
+
+15.How do you perfectly center a div using Flexbox?
+
+Write the CSS code and explain each property.
+Task 1 – Student Dashboard
+Create a Student Dashboard.
+Requirements:
+External CSS
+Universal Selector
+Class Selector
+ID Selector
+Box Model
+Display Block
+Flexbox for Header
+
+ans)display: flex – Converts the container into a Flexbox.
+justify-content: center – Centers the content horizontally.
+align-items: center – Centers the content vertically.
+height: 100vh – Gives the container full screen height so vertical centering works.

@@ -1,0 +1,24 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 30px;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.service {
+    padding: 30px;
+    background-color: lightblue;
+    border-radius: 10px;
+}
+
+.service h2 {
+    margin-top: 0;
+}
+
+.service p {
+    font-size: 16px;
+}

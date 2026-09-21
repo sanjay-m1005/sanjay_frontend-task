@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration</title>
+</head>
+<body>
+
+<h1>Student Registration Form</h1>
+
+<form>
+
+    <label>Student Name:</label>
+    <input type="text" name="studentName">
+    <br><br>
+
+    <label>Email:</label>
+    <input type="email" name="email">
+    <br><br>
+
+    <label>Password:</label>
+    <input type="password" name="password">
+    <br><br>
+
+    <label>Mobile Number:</label>
+    <input type="tel" name="mobile">
+    <br><br>
+
+    <label>Age:</label>
+    <input type="number" name="age">
+    <br><br>
+
+    <label>Gender:</label>
+    <input type="radio" name="gender" value="male"> Male
+    <input type="radio" name="gender" value="female"> Female
+    <br><br>
+
+    <label>Skills:</label>
+    <input type="checkbox" name="skill" value="html"> HTML
+    <input type="checkbox" name="skill" value="css"> CSS
+    <input type="checkbox" name="skill" value="javascript"> JavaScript
+    <br><br>
+
+    <label>Course Selection:</label>
+    <select name="course">
+        <option>Select Course</option>
+        <option>HTML</option>
+        <option>CSS</option>
+        <option>JavaScript</option>
+        <option>Python</option>
+    </select>
+    <br><br>
+
+    <label>Address:</label>
+    <br>
+    <textarea name="address" rows="5" cols="30"></textarea>
+    <br><br>
+
+    <label>Profile Image Upload:</label>
+    <input type="file" name="profileImage">
+    <br><br>
+
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+
+</form>
+
+<hr>
+
+<h2>Student Report</h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>SLA ID</th>
+            <th>Student Name</th>
+            <th>Course</th>
+            <th>Email</th>
+            <th>Mobile Number</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>SLA001</td>
+            <td>Sanjay</td>
+            <td>HTML</td>
+            <td>sanjay@gmail.com</td>
+            <td>9876543210</td>
+            <td>Active</td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>            

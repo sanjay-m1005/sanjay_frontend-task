@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Registration</title>
+</head>
+<body>
+
+<h1>Employee Registration Form</h1>
+
+<form>
+
+    <label>Employee ID:</label>
+    <input type="text" name="employeeId">
+    <br><br>
+
+    <label>Employee Name:</label>
+    <input type="text" name="employeeName">
+    <br><br>
+
+    <label>Email:</label>
+    <input type="email" name="email">
+    <br><br>
+
+    <label>Mobile:</label>
+    <input type="tel" name="mobile">
+    <br><br>
+
+    <label>Department:</label>
+    <select name="department">
+        <option>Select Department</option>
+        <option>IT</option>
+        <option>HR</option>
+        <option>Finance</option>
+        <option>Sales</option>
+    </select>
+    <br><br>
+
+    <label>Experience:</label>
+    <input type="number" name="experience">
+    <br><br>
+
+    <label>Salary:</label>
+    <input type="number" name="salary">
+    <br><br>
+
+    <label>Skills:</label>
+    <input type="checkbox" name="skill" value="html"> HTML
+    <input type="checkbox" name="skill" value="java"> Java
+    <input type="checkbox" name="skill" value="python"> Python
+    <br><br>
+
+    <label>Resume Upload:</label>
+    <input type="file" name="resume">
+    <br><br>
+
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+
+</form>
+
+<hr>
+
+<h2>Employee Report</h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Department</th>
+            <th>Experience</th>
+            <th>Salary</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>EMP001</td>
+            <td>Arun</td>
+            <td>IT</td>
+            <td>2 Years</td>
+            <td>40000</td>
+            <td>Active</td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

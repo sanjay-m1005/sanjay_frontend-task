@@ -1,0 +1,3296 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LearnHub | Daily Development Tasks</title>
+
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            font-family: "Inter", sans-serif;
+
+            color: #172033;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #eef5ff,
+                    #f8f5ff,
+                    #eefcff,
+                    #f5f0ff
+                );
+
+            background-size: 400% 400%;
+
+            animation:
+                backgroundGradient 18s ease infinite;
+
+            overflow-x: hidden;
+
+        }
+
+
+        /* =====================================================
+           BACKGROUND ANIMATION
+        ===================================================== */
+
+        @keyframes backgroundGradient {
+
+            0% {
+                background-position: 0% 50%;
+            }
+
+            25% {
+                background-position: 100% 30%;
+            }
+
+            50% {
+                background-position: 100% 100%;
+            }
+
+            75% {
+                background-position: 0% 80%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+
+        }
+
+
+        /* =====================================================
+           GRID
+        ===================================================== */
+
+        .background-grid {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: -10;
+
+            pointer-events: none;
+
+            opacity: .35;
+
+            background-image:
+                linear-gradient(
+                    rgba(99,102,241,.07) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(99,102,241,.07) 1px,
+                    transparent 1px
+                );
+
+            background-size: 45px 45px;
+
+            animation:
+                gridMove 15s linear infinite;
+
+        }
+
+
+        @keyframes gridMove {
+
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: 45px 45px;
+            }
+
+        }
+
+
+        /* =====================================================
+           GLOWING ORBS
+        ===================================================== */
+
+        .orb {
+
+            position: fixed;
+
+            border-radius: 50%;
+
+            pointer-events: none;
+
+            z-index: -8;
+
+            filter: blur(2px);
+
+            mix-blend-mode: multiply;
+
+        }
+
+
+        .orb-one {
+
+            width: 430px;
+            height: 430px;
+
+            left: -180px;
+            top: 80px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(37,99,235,.32),
+                    rgba(37,99,235,0)
+                );
+
+            animation:
+                orbOne 12s ease-in-out infinite alternate;
+
+        }
+
+
+        .orb-two {
+
+            width: 500px;
+            height: 500px;
+
+            right: -200px;
+            top: 25%;
+             background:
+                radial-gradient(
+                    circle,
+                    rgba(139,92,246,.28),
+                    rgba(139,92,246,0)
+                );
+
+            animation:
+                orbTwo 14s ease-in-out infinite alternate;
+
+        }
+
+
+        .orb-three {
+
+            width: 380px;
+            height: 380px;
+
+            left: 35%;
+            bottom: -220px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(6,182,212,.28),
+                    rgba(6,182,212,0)
+                );
+
+            animation:
+                orbThree 10s ease-in-out infinite alternate;
+
+        }
+
+
+        @keyframes orbOne {
+
+            0% {
+                transform:
+                    translate(0,0)
+                    scale(1);
+            }
+
+            50% {
+                transform:
+                    translate(180px,120px)
+                    scale(1.2);
+            }
+
+            100% {
+                transform:
+                    translate(100px,260px)
+                    scale(.9);
+            }
+
+        }
+
+
+        @keyframes orbTwo {
+
+            0% {
+                transform:
+                    translate(0,0)
+                    scale(1);
+            }
+
+            50% {
+                transform:
+                    translate(-150px,120px)
+                    scale(1.25);
+            }
+
+            100% {
+                transform:
+                    translate(-80px,-100px)
+                    scale(.9);
+            }
+
+        }
+
+
+        @keyframes orbThree {
+
+            0% {
+                transform:
+                    translate(0,0)
+                    scale(1);
+            }
+
+            100% {
+                transform:
+                    translate(180px,-180px)
+                    scale(1.25);
+            }
+
+        }
+
+
+        /* =====================================================
+           PARTICLES
+        ===================================================== */
+
+        .particles {
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            z-index: -5;
+
+        }
+
+
+        .particle {
+
+            position: absolute;
+
+            width: 5px;
+            height: 5px;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #a855f7
+                );
+
+            box-shadow:
+                0 0 12px
+                rgba(99,102,241,.6);
+
+            animation:
+                particleFloat 15s linear infinite;
+
+        }
+
+
+        .particle:nth-child(1) {
+            left: 5%;
+            animation-delay: 1s;
+        }
+
+        .particle:nth-child(2) {
+            left: 15%;
+            animation-delay: 4s;
+        }
+
+        .particle:nth-child(3) {
+            left: 27%;
+            animation-delay: 2s;
+        }
+
+        .particle:nth-child(4) {
+            left: 40%;
+            animation-delay: 6s;
+        }
+
+        .particle:nth-child(5) {
+            left: 52%;
+            animation-delay: 1s;
+        }
+
+        .particle:nth-child(6) {
+            left: 63%;
+            animation-delay: 5s;
+        }
+
+        .particle:nth-child(7) {
+            left: 74%;
+            animation-delay: 3s;
+        }
+
+        .particle:nth-child(8) {
+            left: 84%;
+            animation-delay: 7s;
+        }
+
+        .particle:nth-child(9) {
+            left: 93%;
+            animation-delay: 2s;
+        }
+
+
+        @keyframes particleFloat {
+
+            0% {
+
+                bottom: -20px;
+
+                transform:
+                    translateX(0)
+                    scale(.5);
+
+                opacity: 0;
+
+            }
+
+            15% {
+                opacity: .8;
+            }
+
+            50% {
+
+                transform:
+                    translateX(80px)
+                    scale(1.2);
+
+            }
+
+            100% {
+
+                bottom: 110vh;
+                 transform:
+                    translateX(-100px)
+                    scale(.3);
+
+                opacity: 0;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           SIDEBAR
+        ===================================================== */
+
+        .sidebar {
+
+            position: fixed;
+
+            left: 0;
+            top: 0;
+
+            width: 250px;
+            height: 100vh;
+
+            padding: 28px 18px;
+
+            background:
+                rgba(255,255,255,.67);
+
+            backdrop-filter:
+                blur(25px);
+
+            border-right:
+                1px solid
+                rgba(255,255,255,.75);
+
+            box-shadow:
+                10px 0 40px
+                rgba(52,70,110,.06);
+
+            z-index: 1000;
+
+        }
+
+
+        /* =====================================================
+           LOGO
+        ===================================================== */
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            padding:
+                0 10px 30px;
+
+        }
+
+
+        .logo-icon {
+
+            width: 44px;
+            height: 44px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 13px;
+
+            color: white;
+
+            font-weight: 800;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #7c3aed,
+                    #06b6d4
+                );
+
+            box-shadow:
+                0 12px 30px
+                rgba(79,70,229,.3);
+
+        }
+
+
+        .logo h2 {
+
+            font-size: 19px;
+
+            font-weight: 800;
+
+        }
+
+
+        .logo h2 span {
+
+            color: #4f46e5;
+
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        .nav-title {
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            color: #9aa3b2;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1.5px;
+
+            padding: 0 12px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .nav-link {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            text-decoration: none;
+
+            color: #687386;
+
+            padding: 11px 12px;
+
+            border-radius: 11px;
+
+            margin-bottom: 5px;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            transition: .3s;
+
+        }
+
+
+        .nav-link:hover {
+
+            color: #4338ca;
+
+            background:
+                rgba(99,102,241,.09);
+
+            transform:
+                translateX(6px);
+
+        }
+
+
+        .nav-link.active {
+
+            color: #4338ca;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(37,99,235,.13),
+                    rgba(124,58,237,.07)
+                );
+
+        }
+
+
+        .nav-icon {
+
+            width: 30px;
+            height: 30px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 9px;
+
+            background:
+                rgba(255,255,255,.8);
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+        }
+
+
+        /* =====================================================
+           MAIN
+        ===================================================== */
+
+        .main {
+
+            margin-left: 250px;
+
+            min-height: 100vh;
+
+        }
+
+
+        /* =====================================================
+           TOPBAR
+        ===================================================== */
+
+        .topbar {
+
+            height: 78px;
+
+            padding:
+                0 42px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+             background:
+                rgba(255,255,255,.58);
+
+            backdrop-filter:
+                blur(22px);
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,.75);
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 900;
+
+        }
+
+
+        .breadcrumb {
+
+            font-size: 13px;
+
+            color: #8993a5;
+
+        }
+
+
+        .breadcrumb strong {
+
+            color: #263247;
+
+        }
+
+
+        .search {
+
+            width: 270px;
+
+        }
+
+
+        .search input {
+
+            width: 100%;
+
+            padding:
+                12px 16px;
+
+            border:
+                1px solid
+                rgba(205,211,224,.9);
+
+            border-radius: 11px;
+
+            outline: none;
+
+            font-family: inherit;
+
+            background:
+                rgba(255,255,255,.72);
+
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+
+            margin:
+                38px 42px 30px;
+
+            padding:
+                48px;
+
+            border-radius: 25px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            border:
+                1px solid
+                rgba(255,255,255,.85);
+
+            background:
+                linear-gradient(
+                    120deg,
+                    rgba(255,255,255,.72),
+                    rgba(240,245,255,.7),
+                    rgba(250,244,255,.72)
+                );
+
+            backdrop-filter:
+                blur(20px);
+
+            box-shadow:
+                0 25px 70px
+                rgba(58,74,110,.10);
+
+        }
+
+
+        .hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            right: -180px;
+            top: -260px;
+
+            border-radius: 50%;
+
+            background:
+                conic-gradient(
+                    #2563eb,
+                    #7c3aed,
+                    #06b6d4,
+                    #2563eb
+                );
+
+            opacity: .12;
+
+            animation:
+                heroRotate 12s linear infinite;
+
+        }
+
+
+        @keyframes heroRotate {
+
+            to {
+                transform:
+                    rotate(360deg);
+            }
+
+        }
+
+
+        .hero-content {
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        .hero-label {
+
+            display: inline-block;
+
+            padding:
+                8px 14px;
+
+            border-radius: 30px;
+
+            background:
+                rgba(255,255,255,.78);
+
+            color: #4f46e5;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 16px;
+
+        }
+
+
+        .hero h1 {
+
+            font-size: 38px;
+
+            line-height: 1.2;
+
+            margin-bottom: 12px;
+
+            font-weight: 800;
+
+        }
+
+
+        .hero h1 span {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #2563eb,
+                    #7c3aed,
+                    #06b6d4
+                );
+
+            color: transparent;
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+        }
+
+
+        .hero p {
+
+            max-width: 680px;
+
+            color: #697386;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =====================================================
+           CONTENT
+        ===================================================== */
+
+        .content {
+
+            padding:
+                0 42px 60px;
+
+        }
+
+
+        .section-heading {
+
+            margin:
+                34px 0 18px;
+
+        }
+
+
+        .section-heading h2 {
+
+            font-size: 21px;
+
+            font-weight: 800;
+
+        }
+
+
+        .section-heading p {
+
+            color: #8993a5;
+
+            font-size: 12px;
+
+            margin-top: 5px;
+
+        }
+        /* =====================================================
+           CATEGORY CARDS
+        ===================================================== */
+
+        .category-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(5,1fr);
+
+            gap: 18px;
+
+        }
+
+
+        .category-card {
+
+            text-decoration: none;
+
+            color: #172033;
+
+            padding: 22px;
+
+            border-radius: 17px;
+
+            background:
+                rgba(255,255,255,.65);
+
+            backdrop-filter:
+                blur(16px);
+
+            border:
+                1px solid
+                rgba(255,255,255,.85);
+
+            box-shadow:
+                0 10px 30px
+                rgba(42,57,92,.06);
+
+            transition: .4s;
+
+        }
+
+
+        .category-card:hover {
+
+            transform:
+                translateY(-10px)
+                scale(1.02);
+
+            box-shadow:
+                0 25px 50px
+                rgba(48,63,110,.13);
+
+        }
+
+
+        .category-icon {
+
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 13px;
+
+            margin-bottom: 16px;
+
+            font-weight: 800;
+
+        }
+
+
+        .html-icon {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff0eb,
+                    #ffe0d7
+                );
+
+            color: #e44d26;
+
+        }
+
+
+        .css-icon {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #edf3ff,
+                    #dce7ff
+                );
+
+            color: #2563eb;
+
+        }
+
+
+        .bootstrap-icon {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f2eaff,
+                    #e5d6ff
+                );
+
+            color: #7952b3;
+
+        }
+
+
+        .tailwind-icon {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #e8fbff,
+                    #cef6ff
+                );
+
+            color: #06b6d4;
+
+        }
+
+
+        .js-icon {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff9df,
+                    #fff0a8
+                );
+
+            color: #b58900;
+
+        }
+
+
+        .category-card h3 {
+
+            font-size: 15px;
+
+            font-weight: 700;
+
+            margin-bottom: 6px;
+
+        }
+
+
+        .category-card p {
+
+            font-size: 11px;
+
+            color: #8993a5;
+
+        }
+
+
+        /* =====================================================
+           LEARNING SECTION
+        ===================================================== */
+
+        .learning-section {
+
+            margin-top: 48px;
+
+            scroll-margin-top: 100px;
+
+        }
+
+
+        .learning-header {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 14px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .learning-icon {
+
+            width: 46px;
+            height: 46px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 13px;
+
+            font-weight: 800;
+
+        }
+
+
+        .learning-header h2 {
+
+            font-size: 21px;
+
+            font-weight: 800;
+
+        }
+
+
+        .learning-header p {
+
+            font-size: 12px;
+
+            color: #8993a5;
+
+            margin-top: 4px;
+
+        }
+
+
+        /* =====================================================
+           DAY GRID
+        ===================================================== */
+
+        .day-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap: 18px;
+
+        }
+
+
+        .day-card {
+
+            padding: 19px;
+
+            border-radius: 17px;
+
+            background:
+                rgba(255,255,255,.67);
+                 backdrop-filter:
+                blur(18px);
+
+            border:
+                1px solid
+                rgba(255,255,255,.9);
+
+            box-shadow:
+                0 10px 30px
+                rgba(42,57,92,.055);
+
+            transition: .4s;
+
+        }
+
+
+        .day-card:hover {
+
+            transform:
+                translateY(-7px);
+
+            box-shadow:
+                0 22px 45px
+                rgba(42,57,92,.11);
+
+        }
+
+
+        .day-title {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 14px;
+
+        }
+
+
+        .day-title h3 {
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+        }
+
+
+        .day-number {
+
+            padding:
+                5px 9px;
+
+            border-radius: 7px;
+
+            background:
+                rgba(99,102,241,.08);
+
+            color: #6366f1;
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+        }
+
+
+        /* =====================================================
+           TASK A TAG
+        ===================================================== */
+
+        .tasks {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 8px;
+
+        }
+
+
+        .task {
+
+            text-decoration: none;
+
+            color: #596579;
+
+            background:
+                rgba(248,250,253,.8);
+
+            border:
+                1px solid
+                transparent;
+
+            border-radius: 9px;
+
+            padding:
+                10px 12px;
+
+            font-size: 12px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            transition: .3s;
+
+        }
+
+
+        .task:hover {
+
+            color: #4338ca;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(239,244,255,.95),
+                    rgba(247,243,255,.95)
+                );
+
+            border-color:
+                rgba(129,140,248,.25);
+
+            transform:
+                translateX(6px);
+
+            box-shadow:
+                0 7px 18px
+                rgba(79,70,229,.07);
+
+        }
+
+
+        .arrow {
+
+            color: #a5adba;
+
+            transition: .3s;
+
+        }
+
+
+        .task:hover .arrow {
+
+            color: #6366f1;
+
+            transform:
+                translateX(5px)
+                scale(1.15);
+
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+
+            text-align: center;
+
+            padding: 35px;
+
+            color: #8993a5;
+
+            font-size: 11px;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width:1150px) {
+
+            .category-grid {
+
+                grid-template-columns:
+                    repeat(3,1fr);
+
+            }
+
+            .day-grid {
+
+                grid-template-columns:
+                    repeat(2,1fr);
+
+            }
+
+        }
+
+
+        @media (max-width:768px) {
+
+            .sidebar {
+
+                position: relative;
+
+                width: 100%;
+
+                height: auto;
+
+                border-right: none;
+
+                border-bottom:
+                    1px solid
+                    rgba(220,225,235,.8);
+
+                padding: 15px;
+
+            }
+
+
+            .logo {
+
+                padding-bottom: 15px;
+
+            }
+
+
+            .nav-menu {
+
+                display: flex;
+
+                overflow-x: auto;
+
+                gap: 5px;
+
+            }
+
+
+            .nav-title {
+
+                display: none;
+
+            }
+
+
+            .nav-link {
+
+                white-space: nowrap;
+
+            }
+
+
+            .main {
+
+                margin-left: 0;
+
+            }
+
+
+            .topbar {
+
+                height: auto;
+
+                padding:
+                    15px 20px;
+                     flex-wrap: wrap;
+
+            }
+
+
+            .search {
+
+                width: 220px;
+
+            }
+
+
+            .hero {
+
+                margin:
+                    25px 20px;
+
+                padding:
+                    30px;
+
+            }
+
+
+            .hero h1 {
+
+                font-size: 28px;
+
+            }
+
+
+            .content {
+
+                padding:
+                    0 20px 40px;
+
+            }
+
+
+            .category-grid {
+
+                grid-template-columns:
+                    repeat(2,1fr);
+
+            }
+
+
+            .day-grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+        }
+
+
+        @media (max-width:480px) {
+
+            .topbar {
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+            }
+
+
+            .search {
+
+                width: 100%;
+
+            }
+
+
+            .category-grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .hero h1 {
+
+                font-size: 24px;
+
+            }
+
+
+            .hero {
+
+                padding:
+                    25px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         BACKGROUND
+    ====================================================== -->
+
+    <div class="background-grid"></div>
+
+    <div class="orb orb-one"></div>
+    <div class="orb orb-two"></div>
+    <div class="orb orb-three"></div>
+
+
+    <div class="particles">
+
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                L
+            </div>
+
+            <h2>
+                Learn<span>Hub</span>
+            </h2>
+
+        </div>
+
+
+        <div class="nav-title">
+            Learning
+        </div>
+
+
+        <div class="nav-menu">
+
+
+            <a href="#html" class="nav-link active">
+
+                <span class="nav-icon">
+                    H5
+                </span>
+
+                HTML
+
+            </a>
+
+
+            <a href="#css" class="nav-link">
+
+                <span class="nav-icon">
+                    C3
+                </span>
+
+                CSS
+
+            </a>
+
+
+            <a href="#bootstrap" class="nav-link">
+
+                <span class="nav-icon">
+                    B
+                </span>
+
+                Bootstrap
+
+            </a>
+
+
+            <a href="#tailwind" class="nav-link">
+
+                <span class="nav-icon">
+                    T
+                </span>
+
+                Tailwind
+
+            </a>
+
+
+            <a href="#javascript" class="nav-link">
+
+                <span class="nav-icon">
+                    JS
+                </span>
+
+                JavaScript
+
+            </a>
+
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="main">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+
+            <div class="breadcrumb">
+
+                Learning Hub /
+                <strong>Daily Tasks</strong>
+
+            </div>
+
+
+            <div class="search">
+
+                <input
+                    type="text"
+                    placeholder="Search tasks..."
+                >
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="hero">
+            <div class="hero-content">
+
+
+                <span class="hero-label">
+
+                    MY DAILY LEARNING HUB
+
+                </span>
+
+
+                <h1>
+
+                    Learn.
+                    Practice.
+                    <span>Build.</span>
+
+                </h1>
+
+
+                <p>
+
+                    A modern workspace to organize daily
+                    development tasks, practice consistently,
+                    and build strong technical skills across
+                    modern web technologies.
+
+                </p>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             CONTENT
+        ================================================== -->
+
+        <div class="content">
+
+
+            <div class="section-heading">
+
+                <h2>
+                    Technologies
+                </h2>
+
+                <p>
+                    Choose a technology to explore your daily tasks.
+                </p>
+
+            </div>
+
+
+
+            <!-- TECHNOLOGY CARDS -->
+
+            <div class="category-grid">
+
+
+                <a href="#html" class="category-card">
+
+                    <div class="category-icon html-icon">
+                        H5
+                    </div>
+
+                    <h3>
+                        HTML
+                    </h3>
+
+                    <p>
+                        9 Days • 45 Tasks
+                    </p>
+
+                </a>
+
+
+                <a href="#css" class="category-card">
+
+                    <div class="category-icon css-icon">
+                        C3
+                    </div>
+
+                    <h3>
+                        CSS
+                    </h3>
+
+                    <p>
+                        10 Days • 50 Tasks
+                    </p>
+
+                </a>
+
+
+                <a href="#bootstrap" class="category-card">
+
+                    <div class="category-icon bootstrap-icon">
+                        B
+                    </div>
+
+                    <h3>
+                        Bootstrap
+                    </h3>
+
+                    <p>
+                        3 Days • 15 Tasks
+                    </p>
+
+                </a>
+
+
+                <a href="#tailwind" class="category-card">
+
+                    <div class="category-icon tailwind-icon">
+                        T
+                    </div>
+
+                    <h3>
+                        Tailwind
+                    </h3>
+
+                    <p>
+                        2 Days • 10 Tasks
+                    </p>
+
+                </a>
+
+
+                <a href="#javascript" class="category-card">
+
+                    <div class="category-icon js-icon">
+                        JS
+                    </div>
+
+                    <h3>
+                        JavaScript
+                    </h3>
+
+                    <p>
+                        3 Days • 15 Tasks
+                    </p>
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 HTML
+            ================================================== -->
+
+            <section
+                class="learning-section"
+                id="html"
+            >
+
+
+                <div class="learning-header">
+
+
+                    <div class="learning-icon html-icon">
+                        H5
+                    </div>
+
+
+                    <div>
+
+                        <h2>
+                            HTML
+                        </h2>
+
+                        <p>
+                            HTML Daily Practice • Day 1 — Day 9
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="day-grid">
+
+
+                    <!-- HTML DAY 1 -->
+
+                    <div class="day-card">
+
+                        <div class="day-title">
+
+                            <h3>
+                                HTML Day 1
+                            </h3>
+                             <span class="day-number">
+                                DAY 01
+                            </span>
+
+                        </div>
+
+
+                        <div class="tasks">
+
+                            <a href="file:///D:/SLA%20INSTITUTE/FULL%20STACK/FRONT-END/HTML/HTML%20ASSIGNMENT/ASSIGNMENT%202/block%20level%20elements.html" class="task">
+                                <span>Task 1</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="file:///D:/SLA%20INSTITUTE/FULL%20STACK/FRONT-END/HTML/HTML%20ASSIGNMENT/ASSIGNMENT%202/formatting%20tags.html" class="task">
+                                <span>Task 2</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 2/Inline Elements.html" class="task">
+                                <span>Task 3</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 2/interactive tags .html" class="task">
+                                <span>Task 4</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 2/single html page.html" class="task">
+                                <span>Task 5</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- HTML DAY 2 -->
+
+                    <div class="day-card">
+
+                        <div class="day-title">
+
+                            <h3>
+                                HTML Day 2
+                            </h3>
+
+                            <span class="day-number">
+                                DAY 02
+                            </span>
+
+                        </div>
+
+
+                        <div class="tasks">
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 2/block level elements.html" class="task">
+                                <span>Task 1</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 2/formatting tags.html" class="task">
+                                <span>Task 2</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 2/Inline Elements.html" class="task">
+                                <span>Task 3</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 2/interactive tags .html" class="task">
+                                <span>Task 4</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 2/single html page.html" class="task">
+                                <span>Task 5</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- HTML DAY 3 -->
+
+                    <div class="day-card">
+
+                        <div class="day-title">
+
+                            <h3>
+                                HTML Day 3
+                            </h3>
+
+                            <span class="day-number">
+                                DAY 03
+                            </span>
+
+                        </div>
+
+
+                        <div class="tasks">
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 3/task1.html" class="task">
+                                <span>Task 1</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 3/task2.html" class="task">
+                                <span>Task 2</span>
+                                <span class="arrow">→</span>
+                            </a>
+                             <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 3/task3.html" class="task">
+                                <span>Task 3</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 3/task4.html" class="task">
+                                <span>Task 4</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 3/task5.html" class="task">
+                                <span>Task 5</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- HTML DAY 4 -->
+
+                    <div class="day-card">
+
+                        <div class="day-title">
+
+                            <h3>
+                                HTML Day 4
+                            </h3>
+
+                            <span class="day-number">
+                                DAY 04
+                            </span>
+
+                        </div>
+
+
+                        <div class="tasks">
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 4/task1.html" class="task">
+                                <span>Task 1</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 4/task2.html" class="task">
+                                <span>Task 2</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 4/task3.html" class="task">
+                                <span>Task 3</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 4/task4.html" class="task">
+                                <span>Task 4</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 4/task5.html" class="task">
+                                <span>Task 5</span>
+                                <span class="arrow">→</span>
+                            </a>
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 4/favorate.html" class="task">
+                                <span>Task 6</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- HTML DAY 5 -->
+
+                    <div class="day-card">
+
+                        <div class="day-title">
+
+                            <h3>
+                                HTML Day 5
+                            </h3>
+
+                            <span class="day-number">
+                                DAY 05
+                            </span>
+
+                        </div>
+
+
+                        <div class="tasks">
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 5/chennai.html" class="task">
+                                <span>Task 1</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 5/bangalore.html" class="task">
+                                <span>Task 2</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 5/hyderabad.html" class="task">
+                                <span>Task 3</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 5/company.html" class="task">
+                                <span>Task 4</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 5/mla.html" class="task">
+                                <span>Task 5</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- HTML DAY 6 -->
+
+                    <div class="day-card">
+
+                        <div class="day-title">
+                             <h3>
+                                HTML Day 6
+                            </h3>
+
+                            <span class="day-number">
+                                DAY 06
+                            </span>
+
+                        </div>
+
+
+                        <div class="tasks">
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 6/registration.html" class="task">
+                                <span>Task 1</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 6/registration.html" class="task">
+                                <span>Task 2</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 6/registration.html" class="task">
+                                <span>Task 3</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 6/registration.html" class="task">
+                                <span>Task 4</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 6/registration.html" class="task">
+                                <span>Task 5</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- HTML DAY 7 -->
+
+                    <div class="day-card">
+
+                        <div class="day-title">
+
+                            <h3>
+                                HTML Day 7
+                            </h3>
+
+                            <span class="day-number">
+                                DAY 07
+                            </span>
+
+                        </div>
+
+
+                        <div class="tasks">
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 7/task1.html" class="task">
+                                <span>Task 1</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 7/task2.html" class="task">
+                                <span>Task 2</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 7/task3.html" class="task">
+                                <span>Task 3</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 7/task4.html" class="task">
+                                <span>Task 4</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 7/task5.html" class="task">
+                                <span>Task 5</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- HTML DAY 8 -->
+
+                    <div class="day-card">
+
+                        <div class="day-title">
+
+                            <h3>
+                                HTML Day 8
+                            </h3>
+
+                            <span class="day-number">
+                                DAY 08
+                            </span>
+
+                        </div>
+
+
+                        <div class="tasks">
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 8/task1.html" class="task">
+                                <span>Task 1</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 8/task2.html" class="task">
+                                <span>Task 2</span>
+                                <span class="arrow">→</span>
+                            </a>
+                             <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 8/task3.html" class="task">
+                                <span>Task 3</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 8/task4.html" class="task">
+                                <span>Task 4</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 8/task5.html" class="task">
+                                <span>Task 5</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- HTML DAY 9 -->
+
+                    <div class="day-card">
+
+                        <div class="day-title">
+
+                            <h3>
+                                HTML Day 9
+                            </h3>
+
+                            <span class="day-number">
+                                DAY 09
+                            </span>
+
+                        </div>
+
+
+                        <div class="tasks">
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 9/task.html" class="task">
+                                <span>Task 1</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 9/task2.html" class="task">
+                                <span>Task 2</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 9/task3.html" class="task">
+                                <span>Task 3</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 9/task4.html" class="task">
+                                <span>Task 4</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/HTML/HTML ASSIGNMENT/ASSIGNMENT 9/task5.html" class="task">
+                                <span>Task 5</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 CSS
+            ================================================== -->
+
+            <section
+                class="learning-section"
+                id="css"
+            >
+
+                <div class="learning-header">
+
+                    <div class="learning-icon css-icon">
+                        C3
+                    </div>
+
+                    <div>
+
+                        <h2>CSS</h2>
+
+                        <p>
+                            CSS Daily Practice • Day 1 — Day 10
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="day-grid">
+
+
+                    <!-- CSS DAYS -->
+
+                    <div class="day-card">
+
+                        <div class="day-title">
+
+                            <h3>CSS Day 1</h3>
+
+                            <span class="day-number">
+                                DAY 01
+                            </span>
+
+                        </div>
+
+                        <div class="tasks">
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT1/ASSERT/task.html" class="task">
+                                <span>Task 1</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT1/ASSERT/task1.html" class="task">
+                                <span>Task 2</span>
+                                <span class="arrow">→</span>
+                            </a>
+                             <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT1/ASSERT/task2.html" class="task">
+                                <span>Task 3</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT1/ASSERT/task3.html" class="task">
+                                <span>Task 4</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT1/ASSERT/task4.html" class="task">
+                                <span>Task 5</span>
+                                <span class="arrow">→</span>
+                            </a>
+                            
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT1/ASSERT/task5.html" class="task">
+                                <span>Task 6</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="day-card">
+
+                        <div class="day-title">
+
+                            <h3>CSS Day 2</h3>
+
+                            <span class="day-number">
+                                DAY 02
+                            </span>
+
+                        </div>
+
+                        <div class="tasks">
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT2/task.html" class="task">
+                                <span>Task 1</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT2/task2.html" class="task">
+                                <span>Task 2</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT2/task3.html" class="task">
+                                <span>Task 3</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT2/task4.html" class="task">
+                                <span>Task 4</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT2/task5.html" class="task">
+                                <span>Task 5</span>
+                                <span class="arrow">→</span>
+                            </a>
+                              <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT2/task6.html" class="task">
+                                <span>Task 6</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="day-card">
+
+                        <div class="day-title">
+
+                            <h3>CSS Day 3</h3>
+
+                            <span class="day-number">
+                                DAY 03
+                            </span>
+
+                        </div>
+
+                        <div class="tasks">
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT3/task1.html" class="task">
+                                <span>Task 1</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="css/day3/task2.html" class="task">
+                                <span>Task 2</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="css/day3/task3.html" class="task">
+                                <span>Task 3</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="css/day3/task4.html" class="task">
+                                <span>Task 4</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="css/day3/task5.html" class="task">
+                                <span>Task 5</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="day-card">
+
+                        <div class="day-title">
+
+                            <h3>CSS Day 4</h3>
+
+                            <span class="day-number">
+                                DAY 04
+                            </span>
+
+                        </div>
+
+                        <div class="tasks">
+                             <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT4/task1.html" class="task">
+                                <span>Task 1</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT4/task2.html" class="task">
+                                <span>Task 2</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT4/task3.html" class="task">
+                                <span>Task 3</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT4/task4.html" class="task">
+                                <span>Task 4</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT4/task5.html" class="task">
+                                <span>Task 5</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="day-card">
+
+                        <div class="day-title">
+
+                            <h3>CSS Day 5</h3>
+
+                            <span class="day-number">
+                                DAY 05
+                            </span>
+
+                        </div>
+
+                        <div class="tasks">
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT5/task.html" class="task">
+                                <span>Task 1</span>
+                                <span class="arrow">→</span>
+                            </a>
+                        </div>
+
+                    </div>
+
+
+                    <div class="day-card">
+
+                        <div class="day-title">
+
+                            <h3>CSS Day 6</h3>
+
+                            <span class="day-number">
+                                DAY 06
+                            </span>
+
+                        </div>
+
+                        <div class="tasks">
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT6/task1.html" class="task">
+                                <span>Task 1</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT6/task2.html" class="task">
+                                <span>Task 2</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT6/task3.html" class="task">
+                                <span>Task 3</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT6/task4.html" class="task">
+                                <span>Task 4</span>
+                                <span class="arrow">→</span>
+                            </a>
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT6/task5.html" class="task">
+                                <span>Task 5</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="day-card">
+
+                        <div class="day-title">
+
+                            <h3>CSS Day 7</h3>
+
+                            <span class="day-number">
+                                DAY 07
+                            </span>
+
+                        </div>
+
+                        <div class="tasks">
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT7/task1.html" class="task">
+                                <span>Task 1</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT7/task2.html" class="task">
+                                <span>Task 2</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT7/task3.html" class="task">
+                                <span>Task 3</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT7/task4.html" class="task">
+                                <span>Task 4</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="day-card">
+
+                        <div class="day-title">
+
+                            <h3>CSS Day 8</h3>
+
+                            <span class="day-number">
+                                DAY 08
+                            </span>
+
+                        </div>
+
+                        <div class="tasks">
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT8/task1.html" class="task">
+                                <span>Task 1</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT8/task2.html" class="task">
+                                <span>Task 2</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT8/task3.html" class="task">
+                                <span>Task 3</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT8/task4.html" class="task">
+                                <span>Task 4</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT8/task5.html" class="task">
+                                <span>Task 5</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="day-card">
+
+                        <div class="day-title">
+
+                            <h3>CSS Day 9</h3>
+
+                            <span class="day-number">
+                                DAY 09
+                            </span>
+
+                        </div>
+
+                        <div class="tasks">
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT9/task1.html" class="task">
+                                <span>Task 1</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT9/task2.html" class="task">
+                                <span>Task 2</span>
+                                <span class="arrow">→</span>
+                            </a>
+                             <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT9/task3.html" class="task">
+                                <span>Task 3</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT9/task4.html" class="task">
+                                <span>Task 4</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT9/task5.html" class="task">
+                                <span>Task 5</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="day-card">
+
+                        <div class="day-title">
+
+                            <h3>CSS Day 10</h3>
+
+                            <span class="day-number">
+                                DAY 10
+                            </span>
+
+                        </div>
+
+                        <div class="tasks">
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT 10/task1.html" class="task">
+                                <span>Task 1</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT 10/task2.html" class="task">
+                                <span>Task 2</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT 10/task3.html" class="task">
+                                <span>Task 3</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT 10/task4.html" class="task">
+                                <span>Task 4</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT 10/task5.html" class="task">
+                                <span>Task 5</span>
+                                <span class="arrow">→</span>
+                            </a>
+                            
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT 10/task5.html" class="task">
+                                <span>Task 5</span>
+                                <span class="arrow">→</span>
+                            </a>
+                            
+                            <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT 10/task5.html" class="task">
+                                <span>Task 5</span>
+                                <span class="arrow">→</span>
+                            </a>
+                             <a href="../FRONT-END/CSS/CSS ASSIGNEMENT/ASSIGNMENT 10/chalange.html" class="task">
+                                <span>Task 6</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 BOOTSTRAP
+            ================================================== -->
+
+            <section
+                class="learning-section"
+                id="bootstrap"
+            >
+
+                <div class="learning-header">
+
+                    <div class="learning-icon bootstrap-icon">
+                        B
+                    </div>
+
+                    <div>
+
+                        <h2>Bootstrap</h2>
+
+                        <p>
+                            Bootstrap Daily Practice • Day 2 — Day 3
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="day-grid">
+
+
+                    <!-- BOOTSTRAP DAY 2 -->
+
+                    <div class="day-card">
+
+                        <div class="day-title">
+
+                            <h3>Bootstrap Day 2</h3>
+
+                            <span class="day-number">
+                                DAY 02
+                            </span>
+
+                        </div>
+
+
+                        <div class="tasks">
+
+                            <a href="../FRONT-END/BOOTSTRAP/ASSIGNMENT/ASSIGNMENT1/task1.html" class="task">
+                                <span>Task 1</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/BOOTSTRAP/ASSIGNMENT/ASSIGNMENT1/task2.html" class="task">
+                                <span>Task 2</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/BOOTSTRAP/ASSIGNMENT/ASSIGNMENT1/task3.html" class="task">
+                                <span>Task 3</span>
+                                <span class="arrow">→</span>
+                            </a>
+                    
+                        </div>
+
+                    </div>
+
+
+                    <!-- BOOTSTRAP DAY 3 -->
+
+                    <div class="day-card">
+
+                        <div class="day-title">
+
+                            <h3>Bootstrap Day 3</h3>
+
+                            <span class="day-number">
+                                DAY 03
+                            </span>
+
+                        </div>
+
+
+                        <div class="tasks">
+
+                            <a href="../FRONT-END/BOOTSTRAP/ASSIGNMENT/ASSIGNMENT2/card.html" class="task">
+                                <span>Task 1</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 TAILWIND
+            ================================================== -->
+
+            <section
+                class="learning-section"
+                id="tailwind"
+            >
+
+                <div class="learning-header">
+                    <div class="learning-icon tailwind-icon">
+                        T
+                    </div>
+
+                    <div>
+
+                        <h2>Tailwind CSS</h2>
+
+                        <p>
+                            Tailwind Daily Practice • Day 1 — Day 2
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="day-grid">
+
+
+                    <!-- TAILWIND DAY 1 -->
+
+                    <div class="day-card">
+
+                        <div class="day-title">
+
+                            <h3>Tailwind Day 1</h3>
+
+                            <span class="day-number">
+                                DAY 01
+                            </span>
+
+                        </div>
+
+
+                        <div class="tasks">
+
+                            <a href="../FRONT-END/TAILWINDCSS/assignment1/task1.html" class="task">
+                                <span>Task 1</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/TAILWINDCSS/assignment1/task2.html" class="task">
+                                <span>Task 2</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/TAILWINDCSS/assignment1/task3.html" class="task">
+                                <span>Task 3</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/TAILWINDCSS/assignment1/task4.html" class="task">
+                                <span>Task 4</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/TAILWINDCSS/assignment1/task5.html" class="task">
+                                <span>Task 5</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TAILWIND DAY 2 -->
+
+                    <div class="day-card">
+
+                        <div class="day-title">
+
+                            <h3>Tailwind Day 2</h3>
+
+                            <span class="day-number">
+                                DAY 02
+                            </span>
+
+                        </div>
+
+
+                        <div class="tasks">
+
+                            <a href="../FRONT-END/TAILWINDCSS/assignment2/index.html" class="task">
+                                <span>Task 1</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 JAVASCRIPT
+            ================================================== -->
+
+            <section
+                class="learning-section"
+                id="javascript"
+            >
+
+                <div class="learning-header">
+
+                    <div class="learning-icon js-icon">
+                        JS
+                    </div>
+
+                    <div>
+                        <h2>javascript</h2>
+
+                        <p>
+                            JavaScript Daily Practice • Day 1 — Day 5
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="day-grid">
+
+
+                    <!-- JS DAY 1 -->
+
+                    <div class="day-card">
+
+                        <div class="day-title">
+
+                            <h3>JavaScript Day 1</h3>
+
+                            <span class="day-number">
+                                DAY 01
+                            </span>
+
+                        </div>
+
+
+                        <div class="tasks">
+
+                            <a href="../FRONT-END/JAVASCRIPT/JS ASSIGNMENT/ASSINMENT1/TASK.txt" class="task">
+                                <span>Task 1</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/JAVASCRIPT/JS ASSIGNMENT/ASSINMENT1/task2.txt" class="task">
+                                <span>Task 2</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- JS DAY 2 -->
+
+                    <div class="day-card">
+
+                        <div class="day-title">
+
+                            <h3>JavaScript Day 2</h3>
+
+                            <span class="day-number">
+                                DAY 02
+                            </span>
+
+                        </div>
+
+
+                        <div class="tasks">
+
+                            <a href="../FRONT-END/JAVASCRIPT/JS ASSIGNMENT/ASSINMENT2/task1.html" class="task">
+                                <span>Task 1</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/JAVASCRIPT/JS ASSIGNMENT/ASSINMENT2/task2.html" class="task">
+                                <span>Task 2</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/JAVASCRIPT/JS ASSIGNMENT/ASSINMENT2/task3.html" class="task">
+                                <span>Task 3</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/JAVASCRIPT/JS ASSIGNMENT/ASSINMENT2/task4.html" class="task">
+                                <span>Task 4</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- JS DAY 3 -->
+
+                    <div class="day-card">
+
+                        <div class="day-title">
+
+                            <h3>JavaScript Day 3</h3>
+
+                            <span class="day-number">
+                                DAY 03
+                            </span>
+
+                        </div>
+
+
+                        <div class="tasks">
+
+                            <a href="../FRONT-END/JAVASCRIPT/JS ASSIGNMENT/ASSINMENT3/task1.html" class="task">
+                                <span>Task 1</span>
+                                <span class="arrow">→</span>
+                            </a>
+                             <a href="../FRONT-END/JAVASCRIPT/JS ASSIGNMENT/ASSINMENT3/task2.html" class="task">
+                                <span>Task 2</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/JAVASCRIPT/JS ASSIGNMENT/ASSINMENT3/task3.html" class="task">
+                                <span>Task 3</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/JAVASCRIPT/JS ASSIGNMENT/ASSINMENT3/task4.html" class="task">
+                                <span>Task 4</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/JAVASCRIPT/JS ASSIGNMENT/ASSINMENT3/task5.html" class="task">
+                                <span>Task 5</span>
+                                <span class="arrow">→</span>
+                            </a>
+                            <a href="../FRONT-END/JAVASCRIPT/JS ASSIGNMENT/ASSINMENT3/task6.html" class="task">
+                                <span>Task 6</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+                    <!-- JS DAY 4-->
+
+                    <div class="day-card">
+
+                        <div class="day-title">
+
+                            <h3>JavaScript Day 4</h3>
+
+                            <span class="day-number">
+                                DAY 04
+                            </span>
+
+                        </div>
+
+
+                        <div class="tasks">
+
+                            <a href="../FRONT-END/JAVASCRIPT/JS ASSIGNMENT/ASSIGNMENT4/task1.html" class="task">
+                                <span>Task 1</span>
+                                <span class="arrow">→</span>
+                            </a>
+                             <a href="../FRONT-END/JAVASCRIPT/JS ASSIGNMENT/ASSIGNMENT4/task2.html" class="task">
+                                <span>Task 2</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/JAVASCRIPT/JS ASSIGNMENT/ASSIGNMENT4/task3.html" class="task">
+                                <span>Task 3</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/JAVASCRIPT/JS ASSIGNMENT/ASSIGNMENT4/task4.html" class="task">
+                                <span>Task 4</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/JAVASCRIPT/JS ASSIGNMENT/ASSIGNMENT4/task5.html" class="task">
+                                <span>Task 5</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+                    <!-- JS DAY5-->
+
+                    <div class="day-card">
+
+                        <div class="day-title">
+
+                            <h3>JavaScript Day 5</h3>
+
+                            <span class="day-number">
+                                DAY 05
+                            </span>
+
+                        </div>
+
+
+                        <div class="tasks">
+
+                            <a href="../FRONT-END/JAVASCRIPT/JS ASSIGNMENT/ASSIGNMENT4/" class="task">
+                                <span>Task 1</span>
+                                <span class="arrow">→</span>
+                            </a>
+                             <a href="../FRONT-END/JAVASCRIPT/JS ASSIGNMENT/ASSIGNMENT4/task2.html" class="task">
+                                <span>Task 2</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/JAVASCRIPT/JS ASSIGNMENT/ASSIGNMENT4/task3.html" class="task">
+                                <span>Task 3</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/JAVASCRIPT/JS ASSIGNMENT/ASSIGNMENT4/task4.html" class="task">
+                                <span>Task 4</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                            <a href="../FRONT-END/JAVASCRIPT/JS ASSIGNMENT/ASSIGNMENT4/task5.html" class="task">
+                                <span>Task 5</span>
+                                <span class="arrow">→</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+
+
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            © 2026 LearnHub
+            • Daily Development Practice
+
+        </footer>
+
+
+    </main>
+
+
+</body>
+
+</html>

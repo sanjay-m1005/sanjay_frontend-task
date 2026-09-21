@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #F8FAF7;
+    color: #1e293b;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Glassmorphism & Card Styles */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.glass-panel-subtle {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.glass-card-interactive {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(230, 246, 235, 0.7);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-interactive:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px -5px rgba(44, 111, 67, 0.08), 0 0 20px -2px rgba(72, 171, 105, 0.12);
+  border-color: rgba(113, 200, 141, 0.4);
+}
+
+/* Soft ambient gradients */
+.ambient-mesh {
+  background-image: 
+    radial-gradient(at 15% 15%, rgba(163, 223, 180, 0.22) 0px, transparent 50%),
+    radial-gradient(at 85% 20%, rgba(228, 220, 190, 0.3) 0px, transparent 50%),
+    radial-gradient(at 50% 85%, rgba(186, 230, 253, 0.25) 0px, transparent 50%),
+    radial-gradient(at 80% 80%, rgba(254, 215, 170, 0.2) 0px, transparent 50%);
+}
+
+.ambient-hero {
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(206, 238, 214, 0.45) 0%, transparent 40%),
+    radial-gradient(circle at 90% 30%, rgba(254, 243, 199, 0.5) 0%, transparent 45%),
+    radial-gradient(circle at 50% 90%, rgba(224, 242, 254, 0.4) 0%, transparent 50%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5cb;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9ab399;
+}

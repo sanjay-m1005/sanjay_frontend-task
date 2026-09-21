@@ -1,0 +1,27 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+.back{
+    background-color: red;
+    color: black;
+    height: 100vh;
+    padding: 30px;
+}
+.para{
+    padding: 20px;
+    background-color: aqua;
+    color: black;
+}
+p::first-letter{
+    font-size: larger;
+    color: brown;
+
+}
+p::first-line{
+    font-size: x-large;
+    color: blue;
+
+}

@@ -1,0 +1,33 @@
+1)What is an Attribute?
+ans:Attributes provide additional information about HTML elements.
+
+2)Where are Attributes Written?
+ans:Inside the opening tag.
+
+3)What is the Syntax of an Attribute?
+ans:attribute="value"
+
+4)What is the Difference Between id and class?
+ans:id  → Unique
+    class → Reusable
+
+5)What is href?
+ans:Used to specify a hyperlink destination.
+
+6)What is src?
+ans:Used to specify image source.
+
+7)What is alt?
+ans:Alternative text displayed when image fails to load.
+
+8)What is placeholder?
+ans:Displays hint text inside an input field.
+
+9)What is required?
+ans:Makes an input field mandatory.
+
+10)What are Global Attributes?
+ans:Attributes that can be used on almost every HTML element.
+
+11)What are Local Attributes?
+ans:Attributes that work only on specific HTML elements.
